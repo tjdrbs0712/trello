@@ -33,4 +33,8 @@ public class Card extends Timestamped{
     @ManyToOne
     @JoinColumn(name = "deck", nullable = false)
     private Deck deck;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
